@@ -1,6 +1,6 @@
 # Jekyll-slim
 
-[![Gem Version](https://badge.fury.io/rb/jekyll-slim.png)](http://badge.fury.io/rb/jekyll-slim)
+[![Gem Version](https://badge.fury.io/rb/jekyll-slim.png)](http://badge.fury.io/rb/jekyll-slim) [![Dependency Status](https://gemnasium.com/kaishin/jekyll-slim.png)](https://gemnasium.com/kaishin/jekyll-slim) [![Code Climate](https://codeclimate.com/github/kaishin/jekyll-slim.png)](https://codeclimate.com/github/kaishin/jekyll-slim)
 
 A gem that adds [slim-lang](http://slim-lang.com) support to [Jekyll](http://github.com/mojombo/jekyll). Works for for pages, includes and layouts.
 
@@ -29,7 +29,7 @@ In your Jekyll project's `_plugins` directory:
 
 The gem will convert all the `.slim` files in your project's directory into HTML. That includes files in sub-directories, includes and layouts. Example:
 
-```
+```haml
 # _layouts/default.slim
 html
   head
@@ -37,16 +37,16 @@ html
     .content-wrapper
       | {{ content }}
 ```
+To include a partial, use the `slim` liquid tag instead of `include`:
 
-
-```
+```haml
 # index.slim
 ---
 layout: default
 ---
 
-section.content
-  | {% include footer.slim %}
+section.content Content goes here.
+| {% slim footer.slim %}
 
 ```
 
