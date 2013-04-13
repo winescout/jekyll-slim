@@ -1,6 +1,6 @@
 # Jekyll-slim
 
-[![Gem Version](https://badge.fury.io/rb/jekyll-slim.png)](http://badge.fury.io/rb/jekyll-slim) [![Dependency Status](https://gemnasium.com/kaishin/jekyll-slim.png)](https://gemnasium.com/kaishin/jekyll-slim) [![Code Climate](https://codeclimate.com/github/kaishin/jekyll-slim.png)](https://codeclimate.com/github/kaishin/jekyll-slim)
+[![Gem Version](https://badge.fury.io/rb/jekyll-slim.png)](http://badge.fury.io/rb/jekyll-slim) [![Dependency Status](https://gemnasium.com/kaishin/jekyll-slim.png)](https://gemnasium.com/kaishin/jekyll-slim) [![Code Climate](https://codeclimate.com/github/kaishin/jekyll-slim.png)](https://codeclimate.com/github/kaishin/jekyll-slim) [![Build Status](https://travis-ci.org/kaishin/jekyll-slim.png)](https://travis-ci.org/kaishin/jekyll-slim)
 
 A gem that adds [slim-lang](http://slim-lang.com) support to [Jekyll](http://github.com/mojombo/jekyll). Works for for pages, includes and layouts.
 
