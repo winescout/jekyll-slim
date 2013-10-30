@@ -8,6 +8,11 @@ module Jekyll
     safe true
     priority :low
 
+    def initialize(config)
+      super
+      self.ensure_config_integrity
+    end
+
     def matches(ext)
       ext =~ /slim/i
     end
@@ -18,10 +23,15 @@ module Jekyll
 
     def convert(content)
       begin
-        ::Slim::Template.new { content }.render
+        ::Slim::Template.new(@symbolized_config) { content }.render(@config)
       rescue StandardError => e
         puts "(!) SLIM ERROR: " + e.message
       end
+    end
+
+    def ensure_config_integrity
+      @config['slim']    ||= {}
+      @symbolized_config   = @config['slim'].deep_symbolize_keys
     end
   end
 end
