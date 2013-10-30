@@ -50,6 +50,29 @@ section.content Content goes here.
 
 ```
 
+### Slim options
+
+Is possible to set options available for Slim engine through the `slim` key in `_config.yml`. Example:
+
+```yaml
+# _config.yml
+slim:
+  pretty: true
+  format: html5
+```
+
+### Slim context
+
+The slim context is now set to the jekyll config object. This allows you to access configuration information in your slim file. Example:
+
+```haml
+html
+  head
+  body
+    .content-wrapper
+      = "slim pretty mode: #{ self['slim']['pretty'].to_s }"
+```
+
 ## Credit
 
 Jekyll-slim was heavily inspired by [jekyll-haml](https://github.com/samvincent/jekyll-haml). It is free software, and may be redistributed under the terms specified in the LICENSE file.
