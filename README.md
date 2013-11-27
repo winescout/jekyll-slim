@@ -29,7 +29,7 @@ In your Jekyll project's `_plugins` directory:
 
 The gem will convert all the `.slim` files in your project's directory into HTML. That includes files in sub-directories, includes and layouts. Example:
 
-```haml
+```slim
 # _layouts/default.slim
 html
   head
@@ -39,7 +39,7 @@ html
 ```
 To include a partial, use the `slim` liquid tag instead of `include`:
 
-```haml
+```slim
 # index.slim
 ---
 layout: default
@@ -63,15 +63,27 @@ slim:
 
 ### Context
 
-The slim context is now set to the jekyll config object. This allows you to access configuration information in your slim file. Example:
+~~The slim context is now set to the jekyll config object (version 0.8.4)~~.  
+**From version 0.9.0 is set to acess a `SlimContext` object which has a `site` method, used to access `config`. Be careful because this is a breaking change.**  
+This allows you to access configuration information in your slim file. Example:
 
-```haml
+```slim
 html
   head
   body
     .content-wrapper
-      = "slim pretty mode: #{ self['slim']['pretty'].to_s }"
+      = "slim pretty mode: #{ site.config['slim']['pretty'].to_s }"
 ```
+
+As of 0.9.0, the SlimContext object will be kept across calls, allowing you to easily set
+`@instance_variables` that can be accessed by **all slim files** even those included with the `slim`
+liquid tag. Those are more or less global variables in slim templates, so be careful when you use them.
+
+## TODO
+
+- Per-page slim context
+- Improve code and try to avoid patches as much as possible
+- Parsing Liquid tags before slim so you have access to everything? Can create a lot of problems with Ruby
 
 ## Credit
 
