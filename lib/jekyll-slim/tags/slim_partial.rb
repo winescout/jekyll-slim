@@ -24,7 +24,7 @@ module Jekyll
         choices = Dir['**/*'].reject { |x| File.symlink?(x) }
         if choices.include?(@file)
           source = File.read(@file)
-          conversion = ::Slim::Template.new(context.registers[:site].config['slim'].deep_symbolize_keys) { source }.render(context.registers[:site].config)
+          conversion = ::Slim::Template.new(context.registers[:site].config['slim'].deep_symbolize_keys) { source }.render(context.registers[:site].slim_context)
           partial = Liquid::Template.parse(conversion)
           begin
             return partial.render!(context)
