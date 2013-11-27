@@ -81,9 +81,14 @@ liquid tag. Those are more or less global variables in slim templates, so be car
 
 ## TODO
 
-- Per-page slim context
+- Per-page slim context?
 - Improve code and try to avoid patches as much as possible
 - Parsing Liquid tags before slim so you have access to everything? Can create a lot of problems with Ruby
+- Slim context must be the same as liquid, with paginator, site, page and content variables. See these links:
+  - https://github.com/mojombo/jekyll/blob/a9e2a74ea619a01a9d169da2240ce91b43362c9f/lib/jekyll/tags/include.rb
+  - https://github.com/mojombo/jekyll/blob/a9e2a74ea619a01a9d169da2240ce91b43362c9f/lib/jekyll/page.rb
+  - http://jekyllrb.com/docs/plugins/
+  - http://jekyllrb.com/docs/variables/
 
 ## Credit
 
