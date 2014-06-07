@@ -50,7 +50,7 @@ section.content Content goes here.
 
 ```
 
-### Slim options
+### Options
 
 Is possible to set options available for Slim engine through the `slim` key in `_config.yml`. Example:
 
@@ -61,7 +61,7 @@ slim:
   format: html5
 ```
 
-### Slim context
+### Context
 
 The slim context is now set to the jekyll config object. This allows you to access configuration information in your slim file. Example:
 
