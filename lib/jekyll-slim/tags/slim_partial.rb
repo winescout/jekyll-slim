@@ -5,7 +5,7 @@ module Jekyll
 
     SYNTAX_EXAMPLE = "{% slim file.slim param='value' param2='value' %}"
 
-    VALID_SYNTAX = /([\w-]+)\s*=\s*(?:"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)'|([\w\.-]+))/ 
+    VALID_SYNTAX = /([\w-]+)\s*=\s*(?:"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)'|([\w\.-]+))/
 
     def initialize(tag_name, markup, tokens)
       super
@@ -17,15 +17,12 @@ module Jekyll
       full_valid_syntax = Regexp.compile('\A\s*(?:' + VALID_SYNTAX.to_s + '(?=\s|\z)\s*)*\z')
       unless @params =~ full_valid_syntax
         raise ArgumentError.new <<-eos
-Invalid syntax for include tag:
+          Invalid syntax for include tag:
+        #{@params}
 
-      #{@params}
-
-Valid syntax:
-
-      #{SYNTAX_EXAMPLE}
-
-eos
+          Valid syntax:
+        #{SYNTAX_EXAMPLE}
+        eos
       end
     end
 
@@ -37,12 +34,12 @@ eos
         markup = markup[match.end(0)..-1]
 
         value = if match[2]
-          match[2].gsub(/\\"/, '"')
-        elsif match[3]
-          match[3].gsub(/\\'/, "'")
-        elsif match[4]
-          slim_context[match[4]]
-        end
+                  match[2].gsub(/\\"/, '"')
+                elsif match[3]
+                  match[3].gsub(/\\'/, "'")
+                elsif match[4]
+                  slim_context[match[4]]
+                end
 
         params[match[1]] = value
       end

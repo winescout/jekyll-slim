@@ -1,7 +1,6 @@
 require 'jekyll-slim/slim_context'
 
 module Jekyll
-
   class Site
 
     attr_reader :slim_context
@@ -19,11 +18,9 @@ module Jekyll
           @slim_context ||= SlimContext.new(self)
           conv.locals({ slim_context: @slim_context })
         end
-        
+
         conv
       end
     end
-
   end
-
 end

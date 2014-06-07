@@ -63,8 +63,8 @@ slim:
 
 ### Context
 
-~~The slim context is now set to the jekyll config object (version 0.8.4)~~.  
-**From version 0.9.0 is set to acess a `SlimContext` object which has a `site` method, used to access `config`. Be careful because this is a breaking change.**  
+The slim context is set to acess a `SlimContext` object which has a `site` method, used to access `config`. Be careful because this is a breaking change.
+
 This allows you to access configuration information in your slim file. Example:
 
 ```slim
@@ -75,7 +75,7 @@ html
       = "slim pretty mode: #{ site.config['slim']['pretty'].to_s }"
 ```
 
-As of 0.9.0, the SlimContext object will be kept across calls, allowing you to easily set
+The `SlimContext` object will be kept across calls, allowing you to easily set
 `@instance_variables` that can be accessed by **all slim files** even those included with the `slim`
 liquid tag. Those are more or less global variables in slim templates, so be careful when you use them.
 
@@ -93,4 +93,3 @@ liquid tag. Those are more or less global variables in slim templates, so be car
 ## Credit
 
 Jekyll-slim was heavily inspired by [jekyll-haml](https://github.com/samvincent/jekyll-haml). It is free software, and may be redistributed under the terms specified in the LICENSE file.
-

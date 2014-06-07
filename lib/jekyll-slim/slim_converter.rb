@@ -2,7 +2,7 @@ require 'slim'
 
 module Jekyll
   class SlimConverter < Converter
-    safe     false
+    safe false
     priority :low
 
     def initialize(config)
@@ -27,8 +27,8 @@ module Jekyll
     end
 
     def ensure_config_integrity
-      @config['slim']    ||= {}
-      @symbolized_config   = @config['slim'].deep_symbolize_keys
+      @config['slim'] ||= {}
+      @symbolized_config = @config['slim'].deep_symbolize_keys
     end
   end
 end

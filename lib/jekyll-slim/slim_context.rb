@@ -1,5 +1,4 @@
 class SlimContext
-
   attr_accessor :params
 
   def initialize(site_context)
@@ -10,5 +9,4 @@ class SlimContext
   def site
     @__site
   end
-
 end

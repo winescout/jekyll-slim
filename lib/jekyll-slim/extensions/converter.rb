@@ -6,6 +6,5 @@ module Jekyll
       @locals = locals if locals
       @locals
     end
-
   end
 end
