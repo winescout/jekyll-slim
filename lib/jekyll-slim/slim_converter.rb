@@ -1,4 +1,5 @@
 require 'slim'
+require 'active_support/core_ext/hash'
 
 module Jekyll
   class SlimConverter < Converter

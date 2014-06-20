@@ -9,7 +9,7 @@ module Jekyll
     # https://blog.darmasoft.net/2012/02/29/haml-processing-in-jekyll.html
     # https://github.com/mojombo/jekyll/blob/master/lib/jekyll/site.rb
     def instantiate_subclasses(klass)
-      klass.subclasses.select do |c|
+      klass.descendants.select do |c|
         !self.safe || c.safe
       end.sort.map do |c|
         conv = c.new(self.config)
